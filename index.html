@@ -11,7 +11,7 @@
     <script type="text/javascript" src="etc/main.js">
     </script>
   </head>
-  <body onload="setState(bt.WEL)">
+  <body onload="parseAnchor()">
     <div class="sidebar">
       <div class="sidebar-inside">
         <a id="wel" class="sidebar-active" href="#welcome" onclick="setState(bt.WEL); ">
@@ -36,7 +36,7 @@
           <p>Hi! I'm</p>
           <h2>Rahul Dharmaji</h2>
           <a>
-          <button class="enter">
+          <button href="#experience" class="enter" onclick="setState(bt.EXP)">
             <a href="#experience" onclick="setState(bt.EXP)"> 
             Enter
             </a>
@@ -52,14 +52,61 @@
         <!--<div id="main-content test" class="main-content wel">-->
           <!--<h2>Sidebar</h2>-->
         <!--</div>-->
-        <div id="welcome-box1" class="main-content exp">
-          <h2>exp</h2>
+        <div class="main-content exp exp-box-education">
+          <h2>EDUCATION</h2>
+          <h3>University of California, Santa Barbara</h3>
+          <h4>B.S. Computer Engineering, 9/19-6/23 (projected)</h4>
+          <ul>
+            <li>Data Structures &amp; Algorithms, Object-Oriented Design, Computer Vision, Application Programming</li>
+
+            <li>Sensor and Peripheral Design, Analog/Digital Circuits &amp; Systems, Boolean Algebra, Digital System Design</li>
+          
+            <li>Discrete Math, Linear Algebra, Differential Equations, Vector Calculus, Probability &amp; Statistics</li>
+          </ul>
         </div>
-        <div id="welcome-box1" class="main-content rsm">
-          <h2>rsm</h2>
+        <div class="main-content exp exp-box-skills">
+          <h2>SKILLS</h2>
+          <ul>
+            <li>Daily user of <code>arch/i3</code> as a Linux development environment</li>
+            <li>Frequent usage of <code>vim</code>, <code>git</code>, and <code>make</code> for personal coding projects</li>
+            <li>Experience in shader development with <code>OpenGL+GLSL</code></li>
+            <li>Skilled in building desktop applications with <code>C/C++</code></li>
+            <li>Heavy user of <code>LaTeX</code> to write reports and format data.</li>
+            <li>Able to use <code>Verilog</code> to define the operations of microcontrollers.</li>
+         </ul> 
         </div>
-        <div id="welcome-box1" class="main-content cont">
-          <h2>cont</h2>
+        <div class="main-content exp exp-box-exp">
+          <h2>EXPERIENCE</h2>
+
+          <h3>Software Engineering Intern — Vyu Labs</h3>
+            Installed, tested, and certified development builds for iOS and Android.
+            Ran debugging tools with breakpoints to identify bugs in unit test cases. Adjusted live streaming
+            parameters (bitrates, frame-rates, resolutions, etc.) to determine optimal rendering configurations for
+            mobile phones, tablets, and laptops. Logged bugs with developers and pushed builds onto QA servers.
+          <h3>STEM Mentor, Director of Media — Valkyrie Robotics</h3>
+            Assisted in fulfilling logistics and operations management for the organization by supervising students in the workshop.
+            Worked with the organization’s recruitment committee to help expand membership.
+            Provided graphic design and media support by designing flyers and posters for organization events.
+
+        </div>
+        <div class="main-content exp exp-box-projects">
+          <h2>PROJECTS</h2>
+          <h3>OpenGL Shaders — <code>C/C++/GLSL</code></h3>
+            
+            Using <code>GLSL</code>, and the <code>raylib</code> API, created shaders to simulate a volumetric fog 
+            effect on a 2D plane
+            using Fractal Brownian Motion in order to conserve compute capability over similar 3D effects.
+            Recreated the Gaussian shader algorithm with variable kernel parameters.
+
+          <h3>Piano Visualizer — <code>C++</code></h3>
+            Using open-source MIDI-handling APIs, built a desktop application to visualize live and prerecorded MIDI input. Created 
+            custom UI elements and workflows to optimize user experience.
+        </div>
+        <div class="main-content rsm">
+          <embed src="etc/resume.pdf" frameBorder="0" scrolling="auto" width="100%" height="100%">
+        </div>
+        <div class="main-content cont">
+          <h2>This contact form is WIP!</h2>
         </div>
       </div>
     </div>

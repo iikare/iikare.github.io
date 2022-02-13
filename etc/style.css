@@ -5,6 +5,8 @@
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&display=swap');
 
 /*   
  *
@@ -40,7 +42,13 @@
 body {
   font-family: 'Fira Sans', sans-serif;
   background-color: var(--main-bg-color);
+  background-size: cover;
+  background-repeat: repeat;
   
+
+  height:max-content;
+
+  font-weight:200;
   /* testing image */
   /*background-image: url("../../../dotfiles/img/bg8/bg8c.png");*/
   /*background-repeat: no-repeat;*/
@@ -90,10 +98,7 @@ body {
   /*width: 50%; margin: 0 auto;*/
   padding-top: 10px;
   padding-bottom: 10px;
-  text-decoration: none;
-  text-align: left;
-  font-weight: bold;
-  font-size: 25px;
+  font-size: 32px;
   color: var(--text-color-a);
   display: block;
 }
@@ -125,11 +130,14 @@ body {
   width: 100%;
   height: 100%;
   display: flex;    
-  justify-content: center;
-  align-items: center;
+  justify-content: safe center;
+  align-items: safe center;
+  align-content: safe center;
+  
   flex-wrap: wrap;
+  flex-grow: 1;
 
-
+  /*flex-basis: calc(50% - 40px);  */
   /*transform: rotate(31deg);*/
 
 }
@@ -142,9 +150,11 @@ body {
   border: 6px solid var(--border-color-a);
   backdrop-filter: blur(10px);
 
+  /*margin: auto;*/
+
   /*border: dashed 11px;*/
   /*border-color: var(--hover-color-a);*/
-  flex-basis: auto;
+  /*flex-basis: auto;*/
   color: var(--text-color-a);
   background-color: var(--bg-color-a);
   /*flex: 1 0 33%;*/
@@ -196,6 +206,40 @@ body {
   /*font-weight: bold;*/
   /*text-transform: none;*/
 }
+
+.exp > h2 {
+  font-weight: 400;
+}
+
+.exp > h2 {
+  font-weight: 300;
+}
+
+
+.exp {
+ font-size: 16px; 
+
+ padding-bottom: 8px;
+ padding-left: 24px;
+ padding-right: 24px;
+}
+
+.exp-box-projects, .exp-box-exp, .exp-box-skills, .exp-box.education {
+  max-width: 600px;
+  padding-bottom:24px;
+}
+
+.rsm {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  border: none;
+}
+
+.boldtitle {
+  font-weight:bold;
+}
+
 
 /*   
  *
@@ -272,7 +316,7 @@ button::before {
   transform: translate(-50%, -50%) rotate(59.718deg);
 }
 .enter {
-  /*cursor:pointer;*/
+  cursor:pointer;
 }
 
 button:hover::before, .wel-box1:hover::before {
@@ -289,7 +333,7 @@ button:hover, .wel-box1:hover {
 }
 button a {
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 300;
   position:relative;
 }
 
