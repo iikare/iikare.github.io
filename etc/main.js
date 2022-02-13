@@ -8,7 +8,6 @@ const bt = {
 
 var buttonState = bt.NONE;
 
-console.log(hash);
 function resetButtonColors() {
   const ids = ["wel", "exp", "rsm", "cont"];
   const idlen = ids.length;
