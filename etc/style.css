@@ -162,6 +162,8 @@ body {
   color: var(--text-color-a);
   background-color: var(--bg-color-a);
   /*flex: 1 0 33%;*/
+
+  margin-bottom:120px;
 }
 
 .main-content-hidden {
@@ -353,55 +355,6 @@ button:hover a:link, button:hover a:visited {
 
 /*   
  *
- *   RESPONSIVE   
- *
- */
-
-@media screen and (max-width: 1200px) {
-  .sidebar {
-    padding-top: 15px;
-    width: 80px;
-    border-right: 5px solid var(--border-color-a);
-  }
-  .sidebar a {
-    font-size: 18px;
-  }
-  .main {
-    margin-left: 80px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .sidebar {
-    padding-top: 15px;
-    width: 50px;
-    border-right: 4px solid var(--border-color-a);
-  }
-  .sidebar a {
-    font-size: 12px;
-  }
-  .main {
-    margin-left: 50px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .sidebar {
-    padding-top: 15px;
-    width: 24px;
-    
-    border-right: 2px solid var(--border-color-a);
-  }
-  .sidebar a {
-    font-size: 8px;
-  }
-  .main {
-    margin-left: 24px;
-  }
-}
-
-/*   
- *
  *  LOADING 
  *
  */
@@ -412,10 +365,10 @@ button:hover a:link, button:hover a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: calc(100% - 126px);
   height: 100%;
   top: 0;
-  left: 0;
+  left: 126px;
   opacity: 1;
   background-color: var(--col-w-light);
   z-index: 99;
@@ -458,3 +411,65 @@ button:hover a:link, button:hover a:visited {
     opacity: 0;
   }
 }
+
+/*   
+ *
+ *   RESPONSIVE   
+ *
+ */
+
+@media screen and (max-width: 1200px) {
+  .sidebar {
+    padding-top: 15px;
+    width: 80px;
+    border-right: 5px solid var(--border-color-a);
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+  .main {
+    margin-left: 80px;
+  }
+  #loading {
+    width: calc(100% - 85px);
+    left: 85px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sidebar {
+    padding-top: 15px;
+    width: 50px;
+    border-right: 4px solid var(--border-color-a);
+  }
+  .sidebar a {
+    font-size: 12px;
+  }
+  .main {
+    margin-left: 50px;
+  }
+  #loading {
+    width: calc(100% - 54px);
+    left: 54px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    padding-top: 15px;
+    width: 24px;
+    
+    border-right: 2px solid var(--border-color-a);
+  }
+  .sidebar a {
+    font-size: 8px;
+  }
+  .main {
+    margin-left: 24px;
+  }
+  #loading {
+    width: calc(100% - 26px);
+    left: 26px;
+  }
+}
+
