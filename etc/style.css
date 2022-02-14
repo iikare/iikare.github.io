@@ -59,6 +59,10 @@ body {
   margin: 0px;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*   
  *
  *   SIDEBAR
@@ -404,6 +408,23 @@ button:hover a:link, button:hover a:visited {
     transform: scale(1);
     opacity: 0;
   }
+}
+
+/*   
+ *
+ *   MICRO
+ *
+ */
+
+/* note that this is specific to the project proposal site at iika.re/micro/ */
+
+.project-hide {
+  visibility: hidden;
+  display:none;
+}
+
+.project-link {
+  color: var(--col-p);
 }
 
 /*   

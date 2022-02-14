@@ -89,10 +89,10 @@ function parseAnchor() {
   if (anchor === "welcome") {
     setState(bt.WEL);
   }
-  else if (anchor === "experience") {
+  else if (anchor === "experience" || anchor === "updates") {
     setState(bt.EXP);
   }
-  else if (anchor === "resume") {
+  else if (anchor === "resume" || anchor === "proposal") {
     setState(bt.RSM);
   }
   else if (anchor === "contact") {
