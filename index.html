@@ -15,11 +15,16 @@
     <link rel="preload" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" as="style">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" media="print" onload="this.media='all'">
 
-    <script async type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="etc/main.js">
-    </script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="etc/main.js"></script>
   </head>
   <body onload="parseAnchor()">
+    <div id="loading">
+      <div id="loading-image">
+        <span class="loader" alt="loading..."></span>
+      </div>
+    </div>
     <div class="sidebar">
       <div class="sidebar-inside">
         <a aria-label="welcome" id="wel" class="sidebar-active" href="#welcome" onclick="setState(bt.WEL); ">
@@ -123,5 +128,11 @@
           </p>
         </div>
     </footer>
+    <script>
+      $(window).on('load', function () {
+        $('#loading').hide();
+      }) 
+    </script>
+
   </body>
 </html>

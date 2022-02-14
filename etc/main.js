@@ -58,6 +58,7 @@ function hideFlex() {
 
   for (let i = 0; i < ellen; i++) {
     //el[i].classList.remove("main-content-active");
+
     el[i].classList.add("main-content-hidden");
     $(el[i]).fadeOut(400);
   }
@@ -82,6 +83,7 @@ $(document).ready(function(){
 
 function parseAnchor() {
 
+
   var anchor = window.location.hash.substr(1);
 
   if (anchor === "welcome") {
@@ -100,4 +102,5 @@ function parseAnchor() {
     setState(bt.WEL);
   }
 }
+
 
