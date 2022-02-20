@@ -32,7 +32,7 @@
     <script type="text/javascript" src="./etc/main.js"></script>
   </head>
   <body onload="parseAnchor()">
-    <div id="loading">
+    <div class="loading">
       <div id="loading-image">
         <span class="loader" alt="loading..."></span>
       </div>
@@ -79,9 +79,9 @@
           <h3>University of California, Santa Barbara</h3>
           <h4>B.S. Computer Engineering, 9/19-6/23 (projected)</h4>
           <ul>
-            <li>Data Structures &amp; Algorithms, Object-Oriented Design, Computer Vision, Application Programming</li>
+            <li>Data Structures &amp; Algorithms, Computer Vision, Application Programming, Digital System Design</li>
 
-            <li>Sensor and Peripheral Design, Analog/Digital Circuits &amp; Systems, Boolean Algebra, Digital System Design</li>
+            <li>Sensor and Peripheral Design, Analog/Digital Circuits &amp; Systems, Boolean Algebra</li>
           
             <li>Discrete Math, Linear Algebra, Differential Equations, Vector Calculus, Probability &amp; Statistics</li>
           </ul>
@@ -94,7 +94,7 @@
             <li>Experience in shader development with <code>OpenGL+GLSL</code></li>
             <li>Skilled in building desktop applications with <code>C/C++</code></li>
             <li>Heavy user of <code>LaTeX</code> to write reports and format data.</li>
-            <li>Able to build embedded software using <code>Verilog/C</code>.</li>
+            <li>Able to develop for embedded systems using <code>Verilog/C</code>.</li>
          </ul> 
         </div>
         <div class="main-content exp exp-box-exp">
@@ -113,14 +113,34 @@
         </div>
         <div class="main-content exp exp-box-projects">
           <h2>PROJECTS</h2>
-          <h3>OpenGL Shaders — <code>C/C++/GLSL</code></h3>
-            
-            Using <code>GLSL</code>, and the <code>raylib</code> API, created shaders to simulate a volumetric fog 
-            effect on a 2D plane
-            using Fractal Brownian Motion in order to conserve compute capability over similar 3D effects.
-            Recreated the Gaussian shader algorithm with variable kernel parameters.
-
-          <h3>Piano Visualizer — <code>C++</code></h3>
+          <h3>
+            <code>
+              <a class="repolink" href="#experience" aria-label="meikyuu is a private repository">
+                meikyuu
+              </a>
+            </code>
+            – Modular Game Engine · 
+            <code>
+              C/C++/GLSL
+            </code>
+            (private repo)
+          </h3>
+            Using <code>GLSL</code>, and the <code>raylib</code> API, 
+            created shaders to simulate a volumetric fog effect on a 2D plane
+            using Fractal Brownian Motion as a means to conserve compute capability over similar 3D effects.
+            Implemented a Gaussian Blur shader with variable kernel parameters. Designed a robust adjacency
+            detection algorithm for tile-based mazes.
+          <h3>
+            <code>
+              <a class="repolink" href="https://github.com/iikare/nodumi" aria-label="nodumi">
+                nodumi
+              </a>
+            </code>
+            – Graphical MIDI Visualization · 
+            <code>
+              C++
+            </code>
+          </h3>
             Using open-source MIDI-handling APIs, built a desktop application to visualize live and prerecorded MIDI input. Created 
             custom UI workflows to optimize user experience.
         </div>
@@ -142,7 +162,7 @@
     </footer>
     <script>
       $(window).on('load', function () {
-        $('#loading').hide();
+        $('.loading').hide();
       }) 
     </script>
 

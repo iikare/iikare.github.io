@@ -122,8 +122,8 @@ a {
  */
 
 .main {
-  margin-left: var(--sidebar-spacing); /* Same as the width of the sidebar */
-  font-size: 28px; /* Increased text to enable scrolling */
+  margin-left: var(--sidebar-spacing); /* same as the width of the sidebar */
+  font-size: 28px; /* increased text to enable scrolling */
   padding: 0px 10px;
   height: 100%;
 }
@@ -175,6 +175,11 @@ a {
  *
  */
 
+code {
+  font-weight: 400;
+  color: var(--col-w-light);
+}
+
 .wel-box1 {
   /*background-color: #f00;*/
   color: var(--hover-color-a);
@@ -212,12 +217,18 @@ a {
 
 .exp > h2 {
   font-weight: 400;
+  margin-bottom: 10px;
 }
 
-.exp > h2 {
-  font-weight: 300;
+.exp > h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
+.exp > h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 
 .exp {
  font-size: 16px; 
@@ -230,6 +241,14 @@ a {
 .exp-box-projects, .exp-box-exp, .exp-box-skills, .exp-box.education {
   max-width: 600px;
   padding-bottom:24px;
+}
+
+.repolink {
+  color: var(--col-u-light);
+}
+
+.repolink:hover {
+  color: var(--col-w-light);
 }
 
 .rsm {
@@ -358,7 +377,7 @@ button:hover a:link, button:hover a:visited {
  */
 
 
-#loading {
+.loading {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -416,7 +435,7 @@ button:hover a:link, button:hover a:visited {
  *
  */
 
-/* note that this is specific to the project proposal site at iika.re/micro/ */
+/* specific to iika.re/micro/ */
 
 .project-hide {
   visibility: hidden;
@@ -433,6 +452,12 @@ button:hover a:link, button:hover a:visited {
  *
  */
 
+@media screen and (max-width: 1700px) {
+  footer {
+    visibility: hidden;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .sidebar {
     padding-top: 15px;
@@ -445,12 +470,11 @@ button:hover a:link, button:hover a:visited {
   .main {
     margin-left: 80px;
   }
-  #loading {
+  .loading {
     width: calc(100% - 85px);
     left: 85px;
   }
 }
-
 @media screen and (max-width: 800px) {
   .sidebar {
     padding-top: 15px;
@@ -463,7 +487,7 @@ button:hover a:link, button:hover a:visited {
   .main {
     margin-left: 50px;
   }
-  #loading {
+  .loading {
     width: calc(100% - 54px);
     left: 54px;
   }
