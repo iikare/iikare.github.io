@@ -446,6 +446,18 @@ button:hover a:link, button:hover a:visited {
   color: var(--col-p);
 }
 
+.mc-micro {
+  flex-basis:100%;
+}
+
+.u-micro {
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 /*   
  *
  *   RESPONSIVE   
@@ -453,7 +465,7 @@ button:hover a:link, button:hover a:visited {
  */
 
 @media screen and (max-width: 1700px) {
-  footer {
+   {
     visibility: hidden;
   }
 }
