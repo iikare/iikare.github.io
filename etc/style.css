@@ -458,12 +458,12 @@ button:hover a:link, button:hover a:visited {
   width: 50%;
 }
 
-.demo {
+.demo {  
+  display: flex;
   margin: auto;
-  display: block;
-  width: 50%;
   padding-top: 10px;
   padding-bottom: 5px;
+  justify-content: center;
 }
 
 /*   
