@@ -1,19 +1,30 @@
 const bt = {
-  WEL: "wel",
+  HME: "hme",
+  NOW: "now",
+  CDE: "cde",
   EXP: "exp",
   RSM: "rsm",
-  CONT: "cont",
+  CON: "con",
   NONE: "none"
 };
 
 var buttonState = bt.NONE;
+const ids = ["hme", "now", "cde", "rsm", "exp", "con"];
+
+function validateButtonState(state) {
+  return state === bt.HME || state === bt.EXP || 
+         state === bt.CDE || state === bt.CON ||
+         state === bt.NOW || state === bt.RSM;
+}
 
 function resetButtonColors() {
-  const ids = ["wel", "exp", "rsm", "cont"];
   const idlen = ids.length;
   for (let i = 0; i < idlen; i++) {
     var property = document.getElementById(ids[i]);
-    property.classList.remove("sidebar-active");
+    if (property === null) {
+      continue;
+    }
+    property.classList.remove("header-active");
   }
 }
 
@@ -29,9 +40,13 @@ function setState(enumState) {
 
   resetButtonColors();
 
-  if (buttonState === bt.WEL || buttonState === bt.EXP ||
-      buttonState === bt.RSM || buttonState === bt.CONT) {
-    document.getElementById(buttonState).classList.add("sidebar-active");
+  if (validateButtonState(buttonState)) {
+    var property = document.getElementById(buttonState);
+
+    if (property === null) {
+      return;
+    }
+    property.classList.add("header-active");
     setLocation(buttonState); // value automatically passed via href anchor
   }
   else {
@@ -42,25 +57,24 @@ function setState(enumState) {
 function showFlex(flexType) {
   //console.log(flexType);
   var el = document.getElementsByClassName(flexType);
-  var ellen = el.length;
 
-  for (let i = 0; i < ellen; i++) {
+  var el = document.getElementsByClassName(flexType);
+  for (let i = 0; i < el.length; i++) {
+    $(el[i]).css({"position":"sticky"});
+    $(el[i]).css({"display":"block"});
     el[i].classList.remove("main-content-hidden");
-    //el[i].classList.add("main-content-active");
-    //console.log(el[i]);
-    $(el[i]).hide().fadeIn(400);
+    $(el[i]).animate( { opacity:1 }, 400 );
   }
 }
 
 function hideFlex() {
   var el = document.getElementsByClassName("main-content");
-  var ellen = el.length;
 
-  for (let i = 0; i < ellen; i++) {
-    //el[i].classList.remove("main-content-active");
-
+  for (let i = 0; i < el.length; i++) {
+    $(el[i]).css({"position":"fixed"});
+    $(el[i]).css({"display":"none"});
+    $(el[i]).css({"opacity":"0"});
     el[i].classList.add("main-content-hidden");
-    $(el[i]).fadeOut(400);
   }
 }
 
@@ -68,11 +82,11 @@ function setLocation(buttonState) {
   
   hideFlex();
 
-  if (buttonState === bt.WEL || buttonState === bt.EXP ||
-      buttonState === bt.RSM || buttonState === bt.CONT) {
+  if (validateButtonState(buttonState)) {
     showFlex(buttonState); // value automatically passed via href anchor
   }
 }
+
 $(document).ready(function(){
   $("enter").hover(function () {
     $("enter").css('cursor','pointer');
@@ -81,26 +95,42 @@ $(document).ready(function(){
   });
 });
 
+$(window).on('popstate', function(event) {
+  parseAnchor();  // navigation-related logic
+});
+
 function parseAnchor() {
 
 
   var anchor = window.location.hash.substr(1);
+  var state = bt.HME;
+  var stateClass = "hme";
 
-  if (anchor === "welcome") {
-    setState(bt.WEL);
+  if (anchor === "home") {
+    state = bt.HME;
+    stateClass = "hme";
   }
-  else if (anchor === "experience" || anchor === "updates") {
-    setState(bt.EXP);
+  else if (anchor === "now") {
+    state = bt.NOW;
+    stateClass = "now";
   }
-  else if (anchor === "resume" || anchor === "proposal") {
-    setState(bt.RSM);
+  else if (anchor === "code") {
+    state = bt.CDE;
+    stateClass = "cde";
   }
-  else if (anchor === "contact") {
-    setState(bt.CONT);
+  else if (anchor === "resume") {
+    state = bt.RSM;
+    stateClass = "rsm";
   }
   else {
-    setState(bt.WEL);
+    state = bt.HME;
+    stateClass = "hme";
+  }
+
+  setState(state);
+  var el = document.getElementsByClassName(stateClass);
+  for (let i = 0; i < el.length; i++) {
+    $(el[i]).css({"opacity":"1"});
   }
 }
-
 
