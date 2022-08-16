@@ -4,7 +4,7 @@
     <title>iika-re</title> 
     <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://fonts.googleapis.com https://maxst.icons8.com; script-src 'self' 'unsafe-inline' https://ajax.googleapis.com">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="🌙 website!">
     <meta charset="utf-8"/> 
     
@@ -51,11 +51,6 @@
       <div class="header-content">
         <a aria-label="file" href="#resume" id="rsm" onclick="setState(bt.RSM)">
           <i class="lar la-file"></i>
-        </a>
-      </div>
-      <div class="header-content">
-        <a aria-label="???" href="#code" id="cde" onclick="setState(bt.CDE)">
-          <i class="lar la-envelope"></i>
         </a>
       </div>
     </div>
@@ -163,7 +158,8 @@
 
       </div>
       <div class="rsm main-content main-content-hidden">
-          <embed src="etc/resume.pdf" frameBorder="0" scrolling="auto" width="100%" height="100vh">
+          <iframe src="etc/resume.pdf" loading="lazy" frameborder="0" scrolling="auto" width="100%" height="100vh">
+          </iframe>
           <div class="resume-fallback">
             <a class="main-link" href="etc/resume.pdf">have a link (your device ran out of space)</a>
           </div>
