@@ -57,13 +57,12 @@ function setState(enumState) {
 function showFlex(flexType) {
   //console.log(flexType);
   var el = document.getElementsByClassName(flexType);
-
-  var el = document.getElementsByClassName(flexType);
   for (let i = 0; i < el.length; i++) {
-    $(el[i]).css({"position":"sticky"});
-    $(el[i]).css({"display":"block"});
-    el[i].classList.remove("main-content-hidden");
-    $(el[i]).animate( { opacity:1 }, 400 );
+    el[i].style.position = 'sticky';
+    el[i].style.display = 'block';
+    
+    //    el[i].classList.remove("main-content-hidden");
+    el[i].classList.add("main-op");
   }
 }
 
@@ -71,10 +70,12 @@ function hideFlex() {
   var el = document.getElementsByClassName("main-content");
 
   for (let i = 0; i < el.length; i++) {
-    $(el[i]).css({"position":"fixed"});
-    $(el[i]).css({"display":"none"});
-    $(el[i]).css({"opacity":"0"});
+    el[i].style.position = 'fixed';
+    el[i].style.display = 'none';
+    el[i].style.opacity = 0;
+
     el[i].classList.add("main-content-hidden");
+    el[i].classList.remove("main-op");
   }
 }
 
@@ -87,15 +88,7 @@ function setLocation(buttonState) {
   }
 }
 
-$(document).ready(function(){
-  $("enter").hover(function () {
-    $("enter").css('cursor','pointer');
-  }, 
-  function () {
-  });
-});
-
-$(window).on('popstate', function(event) {
+window.addEventListener('popstate', function(event) {
   parseAnchor();  // navigation-related logic
 });
 
@@ -130,7 +123,6 @@ function parseAnchor() {
   setState(state);
   var el = document.getElementsByClassName(stateClass);
   for (let i = 0; i < el.length; i++) {
-    $(el[i]).css({"opacity":"1"});
+    el[i].style.opacity = 1;
   }
 }
-

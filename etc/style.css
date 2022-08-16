@@ -109,6 +109,10 @@ hr {
   margin-right: 40px;
 }
 
+.main-op {
+  transition: opacity 400ms;
+}
+
 .main-content {
   display: none;
 
