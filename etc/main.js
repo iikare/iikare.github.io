@@ -77,8 +77,6 @@ function hideFlex() {
     el[i].style.position = 'fixed';
     el[i].style.display = 'none';
     el[i].style.opacity = 0;
-
-    el[i].classList.add("main-content-hidden");
     el[i].classList.remove("main-op");
   }
 }
