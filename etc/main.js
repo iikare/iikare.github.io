@@ -60,8 +60,6 @@ function showFlex(flexType) {
   for (let i = 0; i < el.length; i++) {
     el[i].style.position = 'sticky';
     el[i].style.display = 'block';
-    
-    //    el[i].classList.remove("main-content-hidden");
     el[i].classList.add("main-op");
   }
 }
@@ -80,9 +78,7 @@ function hideFlex() {
 }
 
 function setLocation(buttonState) {
-  
   hideFlex();
-
   if (validateButtonState(buttonState)) {
     showFlex(buttonState); // value automatically passed via href anchor
   }
@@ -93,12 +89,9 @@ window.addEventListener('popstate', function(event) {
 });
 
 function parseAnchor() {
-
-
   var anchor = window.location.hash.substr(1);
   var state = bt.HME;
   var stateClass = "hme";
-
   if (anchor === "home") {
     state = bt.HME;
     stateClass = "hme";
@@ -119,7 +112,6 @@ function parseAnchor() {
     state = bt.HME;
     stateClass = "hme";
   }
-
   setState(state);
   var el = document.getElementsByClassName(stateClass);
   for (let i = 0; i < el.length; i++) {
