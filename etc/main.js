@@ -60,6 +60,7 @@ function showFlex(flexType) {
 
   if (flexType == bt.RSM) {
     document.getElementById('res').src="etc/resume.pdf";
+    document.getElementById('resl').href="etc/resume.pdf";
   }
 
   for (let i = 0; i < el.length; i++) {
