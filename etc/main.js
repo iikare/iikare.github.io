@@ -57,6 +57,11 @@ function setState(enumState) {
 function showFlex(flexType) {
   //console.log(flexType);
   var el = document.getElementsByClassName(flexType);
+
+  if (flexType == bt.RSM) {
+    document.getElementById('res').src="etc/resume.pdf";
+  }
+
   for (let i = 0; i < el.length; i++) {
     el[i].style.position = 'sticky';
     el[i].style.display = 'block';
