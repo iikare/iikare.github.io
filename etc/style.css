@@ -3,7 +3,7 @@
   --col-bg:        #f0f4ef;             /* white bg */
   --col-text:      #0d1821;             /* default text */
   --col-sel-link:  #227396;             /* selected link/button */
-  --font-main: 'Fira Sans';
+  --font-main: 'Fira Sans', sans-serif;
   --header-height: 100px;
   --footer-height: 35px;
 }
