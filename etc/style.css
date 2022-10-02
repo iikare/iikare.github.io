@@ -140,13 +140,13 @@ iframe {
 #svg-icon, #text-icon {
   fill: var(--col-sel-link);
   color: var(--col-sel-link);
-  transition: all 0.18s ease-in-out;
+  transition: fill color 0.18s ease-in-out;
 }
 /*#svg-icon:hover, .logo-text:hover{*/
 .logo-anim {
   fill: var(--col-text) !important;
   color: var(--col-text) !important;
-  transition: all 0.18s ease-in-out;
+  transition: fill color 0.18s ease-in-out;
 }
 @media screen and (max-width: 1200px) {
   header {
@@ -172,7 +172,7 @@ iframe {
     font-size: 40px;
   }
   .logo {
-    width: 60%;
+    width: 90%;
   }
   .logo-text {
     display: none;
