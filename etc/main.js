@@ -97,7 +97,7 @@ function parseAnchor() {
     state = bt.s1;
     stateClass = "s1";
   }
-  else if (anchor === "now") {
+  else if (anchor === "now" || anchor === "start") {
     state = bt.s2;
     stateClass = "s2";
   }
@@ -117,5 +117,16 @@ function parseAnchor() {
   var el = document.getElementsByClassName(stateClass);
   for (let i = 0; i < el.length; i++) {
     el[i].style.opacity = 1;
+  }
+}
+
+function svgHover(out) {
+  if (out === false) {
+    document.getElementById("svg-icon").classList.add("logo-anim");
+    document.getElementById("text-icon").classList.add("logo-anim");
+  }
+  else {
+    document.getElementById("svg-icon").classList.remove("logo-anim");
+    document.getElementById("text-icon").classList.remove("logo-anim");
   }
 }
