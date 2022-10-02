@@ -24,36 +24,36 @@
   <body onload="parseAnchor()">
     <div class="header">
       <div class="header-content">
-        <a aria-label="home" href="#home" id="hme" class="header-active" onclick="setState(bt.HME)">
+        <a aria-label="home" href="#home" id="s1" class="header-active" onclick="setState(bt.s1)">
           <i class="las la-home"></i>
         </a>
       </div>
       <div class="header-content">
-        <a aria-label="now" href="#now" id="now" onclick="setState(bt.NOW)">
+        <a aria-label="now" href="#now" id="s2" onclick="setState(bt.s2)">
           <i class="las la-business-time"></i>
         </a>
       </div>
       <div class="header-content">
-        <a aria-label="code" href="#code" id="cde" onclick="setState(bt.CDE)">
+        <a aria-label="code" href="#code" id="s3" onclick="setState(bt.s3)">
           <i class="las la-code"></i>
         </a>
       </div>
       <div class="header-content">
-        <a aria-label="file" href="#resume" id="rsm" onclick="setState(bt.RSM)">
+        <a aria-label="file" href="#resume" id="s4" onclick="setState(bt.s4)">
           <i class="las la-file"></i>
         </a>
       </div>
     </div>
     <hr>
     <div class="content">
-      <div class="hme main-content">
+      <div class="s1 main-content">
         <h2> hi! </h2>
-        <a class="main-link" href="#now" onclick="setState(bt.NOW)">
+        <a class="main-link" href="#home" onclick="setState(bt.s2)">
           more 
           <i class="las la-long-arrow-alt-right"></i>
         </a>
       </div>
-      <div class="now main-content">
+      <div class="s2 main-content">
         <h2>now</h2>
 
         <span>
@@ -67,7 +67,7 @@
         <span>
           architecting a simple, efficient graphics engine 
           <i class="las la-long-arrow-alt-right"></i>
-          <a class="main-link" href="#code" onclick="setState(bt.CDE)">
+          <a class="main-link" href="#code" onclick="setState(bt.s3)">
             meikyuu
           </a>
           (private repo)
@@ -95,7 +95,7 @@
 
         
       </div>
-      <div class="cde main-content">
+      <div class="s3 main-content">
         <h2>code</h2>
 
         <div class="code-item">
@@ -153,7 +153,7 @@
         </div>
 
       </div>
-      <div class="rsm main-content">
+      <div class="s4 main-content">
           <iframe src="" id="res" loading="lazy" frameborder="0" scrolling="auto" width="100%" height="100vh">
           </iframe>
           <div class="resume-fallback">

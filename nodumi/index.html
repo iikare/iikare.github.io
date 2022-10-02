@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>iika-re</title> 
+    <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://fonts.googleapis.com https://maxst.icons8.com; script-src 'self' 'unsafe-inline' https://ajax.googleapis.com">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="website!">
+    <meta name="theme-color" content="#f0f4ef"/>
+    <meta charset="utf-8"/> 
+
+    <link rel="icon" type="image/svg" sizes="32x32" href="icon.svg">
+    <link rel="stylesheet" href="../etc/style.css"> 
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com/"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap" rel="stylesheet"/>
+
+    <link rel="preload" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" as="style">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" media="print" onload="this.media='all'">
+
+    <script type="text/javascript" src="../etc/main.js"></script>
+  </head>
+  <body onload="parseAnchor()">
+    <div class="header">
+      <div class="header-content">
+        <a aria-label="home" href="#home" id="s1" class="header-active" onclick="setState(bt.s1)">
+          <i class="las la-home"></i>
+        </a>
+      </div>
+      <div class="header-content">
+        <a aria-label="now" href="#now" id="s2" onclick="setState(bt.s2)">
+          <i class="las la-business-time"></i>
+        </a>
+      </div>
+    </div>
+    <hr>
+    <div class="content">
+      <div class="s1 main-content">
+        <img src="icon.svg" alt="" type="image/svg" class="logo"/>
+        <a class="main-link" href="#now" onclick="setState(bt.s2)">
+          more 
+          <i class="las la-long-arrow-alt-right"></i>
+        </a>
+      </div>
+      <div class="s2 main-content">
+        <h2>now</h2>
+        <span>
+          building an interactive, real-time, open-source music visualizer 
+          <i class="las la-long-arrow-alt-right"></i>
+          <a class="main-link" href="https://github.com/iikare/nodumi">
+            nodumi (<i class="lab la-github"></i>)
+          </a>
+        </span>
+      </div>
+    </div>
+    <hr class="sepb">
+    <div class="footer" id="footer">
+      <script>
+        document.getElementById('footer').innerHTML = "&copy; 2016-" +(new String(new Date().getFullYear())).slice(-2) + " ";
+      </script>
+      iika-re
+    </div>
+  </body>
+</html>

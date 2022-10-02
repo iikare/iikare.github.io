@@ -1,20 +1,17 @@
 const bt = {
-  HME: "hme",
-  NOW: "now",
-  CDE: "cde",
-  EXP: "exp",
-  RSM: "rsm",
-  CON: "con",
+  s1: "s1",
+  s2: "s2",
+  s3: "s3",
+  s4: "s4", // reserved for resume page
   NONE: "none"
 };
 
 var buttonState = bt.NONE;
-const ids = ["hme", "now", "cde", "rsm", "exp", "con"];
+const ids = ["s1", "s2", "s3", "s4", "NONE"];
 
 function validateButtonState(state) {
-  return state === bt.HME || state === bt.EXP || 
-         state === bt.CDE || state === bt.CON ||
-         state === bt.NOW || state === bt.RSM;
+  return state === bt.s1 || state === bt.s2 || 
+         state === bt.s3 || state === bt.s4;
 }
 
 function resetButtonColors() {
@@ -58,7 +55,7 @@ function showFlex(flexType) {
   //console.log(flexType);
   var el = document.getElementsByClassName(flexType);
 
-  if (flexType == bt.RSM) {
+  if (flexType == bt.s4) {
     document.getElementById('res').src="etc/resume.pdf";
     document.getElementById('resl').href="etc/resume.pdf";
   }
@@ -94,27 +91,27 @@ window.addEventListener('popstate', function(event) {
 
 function parseAnchor() {
   var anchor = window.location.hash.substr(1);
-  var state = bt.HME;
-  var stateClass = "hme";
+  var state = bt.s1;
+  var stateClass = "s1";
   if (anchor === "home") {
-    state = bt.HME;
-    stateClass = "hme";
+    state = bt.s1;
+    stateClass = "s1";
   }
   else if (anchor === "now") {
-    state = bt.NOW;
-    stateClass = "now";
+    state = bt.s2;
+    stateClass = "s2";
   }
   else if (anchor === "code") {
-    state = bt.CDE;
-    stateClass = "cde";
+    state = bt.s3;
+    stateClass = "s3";
   }
   else if (anchor === "resume") {
-    state = bt.RSM;
-    stateClass = "rsm";
+    state = bt.s4;
+    stateClass = "s4";
   }
   else {
-    state = bt.HME;
-    stateClass = "hme";
+    state = bt.s1;
+    stateClass = "s1";
   }
   setState(state);
   var el = document.getElementsByClassName(stateClass);

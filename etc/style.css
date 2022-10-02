@@ -91,16 +91,16 @@ hr {
 .main-link {
   color: var(--col-sel-link);
 }
-.hme > a {
+.s1 > a {
   margin-left: 2px;
 }
-.rsm {
+.s4 {
   margin: 20px 0 20px 0;
 }
 .code-item {
   margin-bottom: 7px;
 }
-.code-item > span, .now > span {
+.code-item > span, .s2 > span {
   margin-left: 18px;
 }
 .code-info {
@@ -121,6 +121,9 @@ iframe {
 }
 .nf-404 {
   font-size: 90px;
+}
+.logo {
+  width: 20%;
 }
 @media screen and (max-width: 1200px) {
   header {
