@@ -136,17 +136,21 @@ iframe {
   display: flex;
   align-items: center;
   font-size: 100px;
+  font-family: 'Fira Sans Extra Condensed', 'sans-serif';
+}
+#text-icon {
+  transform: translate(0px, -8px);
 }
 #svg-icon, #text-icon {
   fill: var(--col-sel-link);
   color: var(--col-sel-link);
-  transition: fill color 0.18s ease-in-out;
+  transition: fill 0.18s ease-in-out, color 0.18s ease-in-out;
 }
 /*#svg-icon:hover, .logo-text:hover{*/
 .logo-anim {
   fill: var(--col-text) !important;
   color: var(--col-text) !important;
-  transition: fill color 0.18s ease-in-out;
+  transition: fill 0.18s ease-in-out, color 0.18s ease-in-out;
 }
 @media screen and (max-width: 1200px) {
   header {
@@ -154,6 +158,11 @@ iframe {
   }
   .logo-text {
     font-size: 70px;
+    display: none;
+  }
+  .logo {
+    width: 70%;
+    height: 70%;
   }
 }
 @media screen and (min-width: 800px) {
@@ -170,11 +179,5 @@ iframe {
   }
   .logo-text {
     font-size: 40px;
-  }
-  .logo {
-    width: 90%;
-  }
-  .logo-text {
-    display: none;
   }
 }
