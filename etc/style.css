@@ -191,4 +191,7 @@ iframe {
   .logo-text {
     font-size: 40px;
   }
+  .text-list {
+    padding-left: 30px;
+  }
 }
