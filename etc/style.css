@@ -100,7 +100,7 @@ hr {
 .code-item {
   margin-bottom: 7px;
 }
-.code-item > span, .s2 > span {
+.code-item > span, .s2 > span, .s3 > span {
   margin-left: 18px;
 }
 .code-info {
@@ -136,7 +136,6 @@ iframe {
   display: flex;
   align-items: center;
   font-size: 100px;
-  font-family: 'Fira Sans Extra Condensed', 'sans-serif';
 }
 #text-icon {
   transform: translate(0px, -8px);
@@ -151,6 +150,18 @@ iframe {
   fill: var(--col-text) !important;
   color: var(--col-text) !important;
   transition: fill 0.18s ease-in-out, color 0.18s ease-in-out;
+}
+.text-cond {
+  font-family: 'Fira Sans Extra Condensed', 'sans-serif';
+}
+.text-mode {
+  font-size: 30px;
+}
+.text-mode-inner {
+  margin-left: 18px;
+}
+.info-block {
+  display: block;
 }
 @media screen and (max-width: 1200px) {
   header {

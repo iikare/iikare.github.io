@@ -30,8 +30,13 @@
         </a>
       </div>
       <div class="header-content">
-        <a aria-label="now" href="#now" id="s2" onclick="setState(bt.s2)">
-          <i class="las la-business-time"></i>
+        <a aria-label="start" href="#start" id="s2" onclick="setState(bt.s2)">
+          <i class="las la-question-circle"></i>
+        </a>
+      </div>
+      <div class="header-content">
+        <a aria-label="mode" href="#mode" id="s3" onclick="setState(bt.s3)">
+          <i class="las la-camera"></i>
         </a>
       </div>
     </div>
@@ -45,7 +50,7 @@
               <defs></defs>
               <title>nodumi</title>
               <g id="svg-icon">
-              <a href="#start" onclick="setState(bt.s2)" onmouseover="svgHover(false)" onmouseout="svgHover(true)">
+              <a href="#start" aria-label="learn more" onclick="setState(bt.s2)" onmouseover="svgHover(false)" onmouseout="svgHover(true)">
                 <path class="cls-1" d="M70.65,67.21c2.64-9.12,8.43-21,13.17-23.75,13.55-7.72,46.9,3.78,55.2-3.36-1.09,16-23.88,35-23.88,35,4.44-3.31,15.4-18.48,12.64-28-10.17-2.58-32.55-1.44-40.29,3.21-8.63,5.2-15.63,23.82-15.91,27-2.74-2-14.81-20.08-15.59-25.28a10,10,0,0,1,0-5.42c3,3.46,6.25,7.66,7,10.93C65.31,67,68.89,73.53,70.65,67.21Z"/>
                 <path class="cls-1" d="M81.39,74.71c9.22-2.28,22.45-3.23,27.16-.47,13.46,7.87,20.17,42.51,30.51,46.12-14.44,7.09-42.28-3.16-42.28-3.16,5.09,2.18,23.71,4.09,30.59-3.07-2.85-10.1-15-28.91-22.93-33.28C95.62,76,76,79.22,73.07,80.58c.39-3.37,10-22.86,14.09-26.13a10,10,0,0,1,4.72-2.69c-1.51,4.31-3.51,9.24-5.95,11.56C78.87,70,75,76.34,81.39,74.71Z"/>
                 <path class="cls-1" d="M80.27,87.76c6.58,6.84,14,17.83,14,23.29-.09,15.59-26.73,38.72-24.69,49.48-13.36-9-18.4-38.2-18.4-38.2.65,5.5,8.31,22.58,18,25,7.32-7.51,17.52-27.46,17.36-36.49C86.29,100.71,73.67,85.34,71,83.49c3.12-1.36,24.79-2.78,29.68-.86a9.89,9.89,0,0,1,4.69,2.74c-4.48.84-9.76,1.58-13,.62C83.09,83.22,75.68,83.07,80.27,87.76Z"/>
@@ -56,25 +61,103 @@
               </g>
             </svg>
           </div>
-          <div class="logo-text">
+          <div class="logo-text text-cond">
             <a href="#start" id="text-icon" onclick="setState(bt.s2)" onmouseover="svgHover(false)" onmouseout="svgHover(true)">
               nodumi
             </a>
           </div>
         </div>
-        <a class="main-link" href="#now" onclick="setState(bt.s2)">
+        <a class="main-link text-cond" href="#now" onclick="setState(bt.s2)">
           more 
           <i class="las la-long-arrow-alt-right"></i>
         </a>
       </div>
       <div class="s2 main-content">
-        <h2>now</h2>
-        <span>
-          building an interactive, real-time, open-source music visualizer 
+        <h2>overview</h2>
+        <span class="info-block">
+          <span class="text-cond">nodumi</span>is a real-time music visualization program
+         
+          <br>
+          <br>
+
+          the full source code is
+          <a class="main-link text-cond" href="https://github.com/iikare/nodumi" 
+             aria-label="github">available (<i class="lab la-github"></i>)</a>,
+           along with build instructions, and (sometimes) precompiled binaries
+          <br>
+
+          currently, only <span class="text-cond">linux</span>and <span class="text-cond">windows</span>are supported
+
+          <br>
+          <br>
+          <span class="text-cond">
+            ನೋಡು (look/see) + [mi]di 
+            <i class="las la-long-arrow-alt-right"></i>
+            nodumi
+          </span>
+        </span>
+        <h2>features</h2>
+        <span class="info-block">
+          this list is non-exhaustive, and more features may be present as development continues
+          <br>
+
+          <ul>
+            <li>
+              visualization from prerecorded MIDI, or from live MIDI input
+            </li>
+            <li>
+              four unique display modes
+
+              <a class="main-link text-cond" href="#mode" 
+                 aria-label="display modes" onclick="setState(bt.s3)">available (<i class="las la-camera"></i>)</a>,
+            </li>
+            <li>
+              full control of display parameters (zoom, color, etc.)
+            </li>
+            <li>
+              automatic color palette generation from background image 
+            </li>
+            <li>
+              real-time sheet music generation (partially complete) 
+            </li>
+            <li>
+              condense all visualization parameters into a single project file
+            </li>
+
+          </ul>
+
+        </span>
+        <a class="main-link text-cond" href="#mode" onclick="setState(bt.s3)">
+          more 
           <i class="las la-long-arrow-alt-right"></i>
-          <a class="main-link" href="https://github.com/iikare/nodumi">
-            nodumi (<i class="lab la-github"></i>)
-          </a>
+        </a>
+      </div>
+      <div class="s3 main-content proj">
+
+        <h2>display modes</h2> 
+        <span class="info-block">
+          this page is under construction
+          <br>
+          <span class="text-mode text-cond">standard</span>
+
+            <br>
+            <div class="text-mode-inner">o</div>
+
+          <span class="text-mode text-cond">pulse</span>
+          
+          
+
+            <br>
+            <div class="text-mode-inner">o</div>
+
+          <span class="text-mode text-cond">line</span>
+            <br>
+            <div class="text-mode-inner">o</div>
+          
+          <span class="text-mode text-cond">ball</span>
+
+            <br>
+            <div class="text-mode-inner">o</div>
         </span>
       </div>
     </div>

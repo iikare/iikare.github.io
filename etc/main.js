@@ -101,7 +101,7 @@ function parseAnchor() {
     state = bt.s2;
     stateClass = "s2";
   }
-  else if (anchor === "code") {
+  else if (anchor === "code" || anchor === "mode") {
     state = bt.s3;
     stateClass = "s3";
   }
