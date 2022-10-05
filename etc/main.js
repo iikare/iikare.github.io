@@ -25,6 +25,10 @@ function resetButtonColors() {
   }
 }
 
+function clearHash() { 
+  history.pushState("", document.title, window.location.pathname + window.location.search);
+}
+
 function setState(enumState) {
   
   if (buttonState === enumState) {
@@ -83,6 +87,7 @@ function setLocation(buttonState) {
   if (validateButtonState(buttonState)) {
     showFlex(buttonState); // value automatically passed via href anchor
   }
+
 }
 
 window.addEventListener('popstate', function(event) {
@@ -91,6 +96,7 @@ window.addEventListener('popstate', function(event) {
 
 function parseAnchor() {
   var anchor = window.location.hash.substr(1);
+  clearHash();
   var state = bt.s1;
   var stateClass = "s1";
   if (anchor === "home") {
