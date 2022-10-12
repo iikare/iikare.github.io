@@ -160,8 +160,31 @@ iframe {
 .text-mode-inner {
   margin-left: 18px;
 }
-.info-block {
+.info-block, .mi {
   display: block;
+}
+.mi {
+  width: 200px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out; 
+  cursor: pointer;
+}
+.mi:hover {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out; 
+}
+.mic {
+  /*position: absolute;*/
+  top: 20%;
+  margin: auto !important;
+}
+.if { /* info flex */
+  display:flex !important;
+  flex-direction: row;
+}
+.ifc {
+  margin-left: 20px;
+
 }
 @media screen and (max-width: 1200px) {
   header {

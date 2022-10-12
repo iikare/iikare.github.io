@@ -130,3 +130,8 @@ function svgHover(out) {
     document.getElementById("text-icon").classList.remove("logo-anim");
   }
 }
+
+function imageCenter(state) {
+  document.getElementById("idisp").src = "image/" + state + ".png";
+  document.getElementById("idisp").alt = "display mode: " + state;
+}
