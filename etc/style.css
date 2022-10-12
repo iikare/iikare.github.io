@@ -175,15 +175,17 @@ iframe {
 }
 .mic {
   /*position: absolute;*/
-  top: 20%;
   margin: auto !important;
+}
+#idisp {
+  margin-left: 20px !important;
+  width: 100%;
 }
 .if { /* info flex */
   display:flex !important;
   flex-direction: row;
 }
 .ifc {
-  margin-left: 20px;
 
 }
 @media screen and (max-width: 1200px) {
@@ -216,5 +218,12 @@ iframe {
   }
   .text-list {
     padding-left: 30px;
+  }
+  .mi {
+    opacity: 1;
+    width: 100%;
+  }
+  .mic {
+    display: none;
   }
 }
