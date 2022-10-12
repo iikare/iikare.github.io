@@ -168,6 +168,7 @@ iframe {
   opacity: 0.8;
   transition: opacity 0.2s ease-in-out; 
   cursor: pointer;
+  margin-bottom: 8px;
 }
 .mi:hover {
   opacity: 1;
@@ -178,15 +179,15 @@ iframe {
   margin: auto !important;
 }
 #idisp {
-  margin-left: 20px !important;
+  margin-left: 30px !important;
   width: 100%;
 }
 .if { /* info flex */
   display:flex !important;
   flex-direction: row;
 }
-.ifc {
-
+.ifc-l {
+  max-width: 200px;
 }
 @media screen and (max-width: 1200px) {
   header {
@@ -218,6 +219,9 @@ iframe {
   }
   .text-list {
     padding-left: 30px;
+  }
+  .ifc-l {
+    max-width: 100%;
   }
   .mi {
     opacity: 1;
