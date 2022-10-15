@@ -42,9 +42,15 @@ hr {
 .header-content {
   font-size: 35px; 
 }
+.hic {
+  color: var(--col-text);
+}
+.hic:hover {
+  color: var(--col-sel-link);
+  transition: color 0.18s ease-in-out;
+}
 .header-active  {
   color: var(--col-sel-link);
-  transition: all 0.08s ease-in-out;
 }
 .footer {
   position: absolute;
