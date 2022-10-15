@@ -106,7 +106,7 @@
               visualization from prerecorded MIDI, or from live MIDI input
             </li>
             <li>
-              five unique display modes
+              six unique display modes
 
               <a class="main-link text-cond" href="#mode" 
                  aria-label="display modes" onclick="setState(bt.s3)">available (<i class="las la-camera"></i>)</a>,
@@ -152,20 +152,24 @@
                   <img src="image/default.png" class="mi" alt="display mode: default" onclick="imageCenter('default')">
                   the standard display mode
                   <br>
-                  fast bar-based renderer
-                  <br>
                 </div>
               
-              <span class="text-mode text-cond">fft</span>
+              <span class="text-mode text-cond">voronoi</span>
+
+                <br>
+                <div class="text-mode-inner">
+                  <img src="image/voronoi.png" class="mi" alt="display mode: fft" onclick="imageCenter('voronoi')" >
+                  voronoi cells separate notes
+                </div>
+
+                <span class="text-mode text-cond">fft</span>
 
                 <br>
                 <div class="text-mode-inner">
                   <img src="image/fft.png" class="mi" alt="display mode: fft" onclick="imageCenter('fft')" >
                   FFT approximation of a piano sound envelope function
-                  <br>
-                  slower on large amounts of concurrent notes
                 </div>
-
+              
               <span class="text-mode text-cond">pulse</span>
               
                 <br>
@@ -173,8 +177,6 @@
                 <div class="text-mode-inner">
                   <img src="image/pulse.png" class="mi" alt="display mode: pulse" onclick="imageCenter('pulse')">
                   pulse highlights active notes
-                  <br>
-                  line-based renderer
                 </div>
 
               <span class="text-mode text-cond">line</span>
@@ -184,8 +186,6 @@
                 <div class="text-mode-inner">
                   <img src="image/line.png" class="mi" alt="display mode: line" onclick="imageCenter('line')">
                   bezier curves connect adjacent notes
-                  <br>
-                  line-based renderer
                 </div>
               
               <span class="text-mode text-cond">ball</span>
@@ -194,9 +194,7 @@
                 
                 <div class="text-mode-inner">
                   <img src="image/ball.png" class="mi" alt="display mode: ball" onclick="imageCenter('ball')">
-                  separate past and present notes through sized circles
-                  <br>
-                  bar-based renderer
+                  temporal separation through variably-sized circles
                 </div>
 
               </span>
