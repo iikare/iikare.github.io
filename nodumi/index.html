@@ -21,6 +21,26 @@
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" media="print" onload="this.media='all'">
 
     <script type="text/javascript" src="../etc/main.js"></script>
+    <script>
+      // the mode list is the only part of the page that scrolls, so the wheel scrolls it from anywhere
+      window.addEventListener("wheel", function(event) {
+        const list = document.querySelector(".mode-view .ifc-l");
+        const viewer = document.querySelector(".mode-view .mic");
+        // on narrow screens the viewer is hidden and the whole page scrolls instead
+        if (list === null || list.offsetParent === null || viewer.offsetParent === null || list.contains(event.target)) {
+          return;
+        }
+        let dy = event.deltaY;
+        if (event.deltaMode === WheelEvent.DOM_DELTA_LINE) {
+          dy *= 16;
+        }
+        else if (event.deltaMode === WheelEvent.DOM_DELTA_PAGE) {
+          dy *= list.clientHeight;
+        }
+        list.scrollBy({top: dy});
+        event.preventDefault();
+      }, {passive: false});
+    </script>
   </head>
   <body onload="parseAnchor()">
     <div class="header">
@@ -83,7 +103,7 @@
           the full source code is
           <a class="main-link text-cond" href="https://github.com/iikare/nodumi" 
              aria-label="github">available (<i class="lab la-github"></i>)</a>,
-           along with build instructions, and (sometimes) precompiled binaries
+           along with build instructions
           <br>
 
           currently, only <span class="text-cond">linux</span>and <span class="text-cond">windows</span>are supported
@@ -113,7 +133,7 @@
               visualization from prerecorded or real-time MIDI input
             </li>
             <li>
-              six unique display modes
+              seven unique display modes
 
               <a class="main-link text-cond" href="#mode" 
                  aria-label="display modes" onclick="setState(bt.s3)">available (<i class="las la-camera"></i>)</a>,
@@ -125,13 +145,19 @@
               algorithmic color palette generation from a background image 
             </li>
             <li>
-              real-time sheet music generation (in development) 
+              real-time sheet music generation from files or live input, with beams, ties, rests and two voices per staff (in development)
             </li>
             <li>
               particle generation for currently active notes
             </li>
             <li>
               automatic hand detection and track splitting from real-time MIDI input data
+            </li>
+            <li>
+              MIDI output to an external synthesizer, in sync with playback
+            </li>
+            <li>
+              frame-by-frame export for rendering videos
             </li>
             <li>
               packaging of selected options in a single master parameter file
@@ -146,12 +172,13 @@
         </a>
       </div>
       <div class="s3 main-content proj">
-        <h2>display modes</h2> 
-        <span class="info-block">
+        <div class="mode-page">
+          <h2>display modes</h2> 
+          <span class="info-block">
+            this page is under construction
+          </span>
 
-          this page is under construction
-
-          <div class="if">
+          <div class="if mode-view">
             <div class="ifc ifc-l">
 
               <br>
@@ -161,8 +188,16 @@
 
                 <br>
                 <div class="text-mode-inner">
-                  <img src="image/voronoi.png" class="mi" alt="display mode: fft" onclick="imageCenter('voronoi')" >
+                  <img src="image/voronoi.png" class="mi" alt="display mode: voronoi" onclick="imageCenter('voronoi')" >
                   voronoi cells separate notes
+                </div>
+
+                <span class="text-mode text-cond">loop</span>
+
+                <br>
+                <div class="text-mode-inner">
+                  <img src="image/loop.png" class="mi" alt="display mode: loop" onclick="imageCenter('loop')" >
+                  lines draw in from note to note as they play
                 </div>
 
                 <span class="text-mode text-cond">fft</span>
@@ -170,7 +205,7 @@
                 <br>
                 <div class="text-mode-inner">
                   <img src="image/fft.png" class="mi" alt="display mode: fft" onclick="imageCenter('fft')" >
-                  FFT approximation of a piano sound envelope function
+                  a modelled piano spectrum, split by track
                 </div>
                 
                 <span class="text-mode text-cond">pulse</span>
@@ -212,10 +247,10 @@
               </div>
             </div>
             <div class="ifc mic">
-              <img src="image/voronoi.png" id="idisp" style="margin:auto" alt="display mode: voronoi">
+              <img src="image/voronoi.png" id="idisp" alt="display mode: voronoi">
             </div>
           </div>
-        </span>
+        </div>
       </div>
     </div>
     <hr class="sepb">

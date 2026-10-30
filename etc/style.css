@@ -112,7 +112,7 @@ hr {
 .code-item {
   margin-bottom: 7px;
 }
-.code-item > span, .s2 > span, .s3 > span {
+.code-item > span, .s2 > span, .s3 > span, .mode-page > span, .mode-view {
   margin-left: 18px;
 }
 .code-info {
@@ -186,13 +186,34 @@ iframe {
   opacity: 1;
   transition: opacity 0.2s ease-in-out; 
 }
+.mode-page {
+  /* fills the window between the header and footer, so only the mode list scrolls */
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--header-height) - var(--footer-height) - 40px);
+}
+.mode-view {
+  flex: 1;
+  min-height: 0;
+  margin-top: 20px;
+}
+.mode-view .ifc-l {
+  max-width: none;
+  width: 220px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  padding-right: 12px;
+}
 .mic {
-  /*position: absolute;*/
-  margin: auto !important;
+  flex: 1;
+  min-width: 0;
+  margin-left: 30px;
 }
 #idisp {
-  margin-left: 30px !important;
-  width: 100%;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
 }
 .if { /* info flex */
   display:flex !important;
@@ -241,5 +262,11 @@ iframe {
   }
   .mic {
     display: none;
+  }
+  .mode-page {
+    height: auto;
+  }
+  .mode-view .ifc-l {
+    overflow-y: visible;
   }
 }
